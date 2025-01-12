@@ -1,0 +1,78 @@
+$FooterLogoWidth: 20.77%;
+.footer {
+    .footer-main {
+        padding-top: 140px;
+        padding-top: 160px;
+        .footer-main-inner.container {
+            .footer-header {
+                display: grid;
+                grid-template-columns: $FooterLogoWidth auto;
+                :not(:last-child) {
+                    margin-bottom: 60px;
+                }
+                .footer-logo {
+                    .footer-logo-image {
+                    }
+                }
+                .footer-description {
+                    text-align: left;
+                    a {
+                    }
+                }
+            }
+            .footer-body {
+                display: grid;
+                grid-template-columns: $FooterLogoWidth repeat(3, 1fr);
+                .footer-column {
+                    .footer-column-title {
+                        font-size: clamp(18px, 1.15vw, 22px);
+                        :not(:last-child) {
+                            margin-bottom: 15px;
+                        }
+                    }
+                    .footer-about {
+                    }
+                    .footer-schedule {
+                        :not(:last-child) {
+                            margin-bottm: 15px;
+                        }
+                    }
+                    .footer-address {
+                    }
+                    .footer-contancts {
+                        .footer-contancts-list {
+                            .footer-contancts-item {
+                                .footer-contancts-link {
+                                }
+                            }
+                        }
+                    }
+                    .form-footer-subscribe {
+                        .footer-subscribe-input.input {
+                        }
+                        .footer-subscribe-button {
+                        }
+                    }
+                    .footer-socials {
+                        .footer-socials-list {
+                            .footer-socials-item {
+                                .footer-socials-link {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-extra {
+            padding-block: 15px;
+            /* background-color: $Dark; */
+            .footer-extra-inner.container {
+                .footer-coperight {
+                    a {
+                    }
+                }
+            }
+        }
+    }
+}

@@ -169,8 +169,6 @@ html(lang="en")
     footer.footer
         .footer-main
             .footer-main-inner.container
-        .footer-extra
-            .footer-extra-inner.container
                 header.footer-header
                     a.footer-logo(href="/")
                         img.footer-logo-image(src="images/logo.png" alt="Kropp Logo" width="270" height="50")
@@ -194,7 +192,7 @@ html(lang="en")
                             time(datetime="00:00/24:00") 00:00 - 24:00
                     .footer-column
                         h2.footer-column-title Location
-                        addreess.footer-address
+                        address.footer-address
                             | 68 Jay Street, Brooklyn,
                             br
                             | NY 11201, United States
@@ -214,3 +212,25 @@ html(lang="en")
                             ul.footer-socials-list
                                 li.footer-socials-item
                                     a.footer-socials-link(target="_blank" href="/")
+                                        include images/tiktok.svg
+                                li.footer-socials-item
+                                    a.footer-socials-link(target="_blank" href="/")
+                                        include images/youtube.svg
+                                li.footer-socials-item
+                                    a.footer-socials-link(target="_blank" href="/")
+                                        include images/instagram.svg
+                                li.footer-socials-item
+                                    a.footer-socials-link(target="_blank" href="/")
+                                        include images/facebook.svg
+                                li.footer-socials-item
+                                    a.footer-socials-link(target="_blank" href="/")
+                                        include images/twitter.svg
+
+        .footer-extra
+            .footer-extra-inner.container
+                .footer-coperight
+                    | ©
+                    time(datetime="2022") 2022
+                    | Qode Interactive, All Rights Reserved |
+                    a(href="/") Privacy Policy |
+                    a(href="/") Contact Us
