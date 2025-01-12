@@ -7,5 +7,8 @@
   "scripts": {
     "build": "parcel build index.pug --no-source-maps",
     "dev": "parcel index.pug"
+  },
+  "dependencies": {
+    "parcel": "^2.13.3"
   }
 }
