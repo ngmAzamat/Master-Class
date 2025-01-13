@@ -1,4 +1,12 @@
-$FooterLogoWidth: 20.77%;
+@use "vars.scss" as *;
+svg *[fill] {
+    fill: currentColor;
+}
+
+svg *[stroke] {
+    stroke: currentColor;
+}
+
 .footer {
     .footer-main {
         padding-top: 140px;
@@ -12,6 +20,7 @@ $FooterLogoWidth: 20.77%;
                 }
                 .footer-logo {
                     .footer-logo-image {
+                        height: auto;
                     }
                 }
                 .footer-description {
@@ -24,6 +33,17 @@ $FooterLogoWidth: 20.77%;
                 display: grid;
                 grid-template-columns: $FooterLogoWidth repeat(3, 1fr);
                 .footer-column {
+                    .footer-column.has-arrow {
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: 0.74em;
+                            height: 0.74em;
+                            margin-left: 0.5em;
+                            /* background: url("") center/contain no-repeat; */
+                            scale: -1 1;
+                        }
+                    }
                     .footer-column-title {
                         font-size: clamp(18px, 1.15vw, 22px);
                         :not(:last-child) {
@@ -38,6 +58,10 @@ $FooterLogoWidth: 20.77%;
                         }
                     }
                     .footer-address {
+                        font-style: normal;
+                        :not(:last-child) {
+                            margin-bottom: 35px;
+                        }
                     }
                     .footer-contancts {
                         .footer-contancts-list {
@@ -48,15 +72,34 @@ $FooterLogoWidth: 20.77%;
                         }
                     }
                     .form-footer-subscribe {
+                        position: relative;
+                        :not(:last-child) {
+                            margin-bottom: 50px;
+                        }
                         .footer-subscribe-input.input {
+                            padding-right: 70px;
                         }
                         .footer-subscribe-button {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            border: $Border;
+                            border-radius: 50%;
+                            height: 100%;
+                            aspect-ratio: 1;
+                            :hover {
+                                background-color: $LightGrey;
+                            }
                         }
                     }
                     .footer-socials {
                         .footer-socials-list {
+                            display: flex;
+                            column-gap: 18px;
                             .footer-socials-item {
                                 .footer-socials-link {
+                                    display: flex;
+                                    width: 23px;
                                 }
                             }
                         }
@@ -74,5 +117,39 @@ $FooterLogoWidth: 20.77%;
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-main {
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
+    .footer-header {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .footer-body {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-main {
+        padding-top: 50px;
+    }
+    .footer-header:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    .footer-body {
+        grid-template-columns: 1fr;
+    }
+    .footer-header:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    .footer-header:not(:last-child) {
+        margin-block: 30px;
     }
 }

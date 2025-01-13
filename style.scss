@@ -1,4 +1,12 @@
-@import "footer.scss";
+@use "footer.scss" as *;
+@use "vars.scss" as *;
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
 @font-face {
     font-family: "Yantramanav";
     src: url("fonts/Yantramanav-Bold.woff2");
@@ -6,21 +14,6 @@
     font-weight: 700;
     font-display: swap;
 }
-
-$Dark-Alternate: #131619;
-$Dark: #000000;
-$Light: #ffffff;
-$Border: 1px solid $Light;
-$BorderRadius: 30px;
-$Grey: #404040;
-$LightGrey: #c4c4c4;
-$InputHeight: 54px;
-$CotainerWidth: 1300px;
-$CotainerPaddingX: 15px;
-$Transition: 0.2s;
-$FontFamilyBase: "Heebo", sans-serif;
-$FontFamilyAccent: "Yantramanav", sans-serif;
-$HeaderHeight: 90px;
 
 body {
     background-color: $Dark;
@@ -40,17 +33,18 @@ svg * {
 
 a {
     color: $Light;
-}
-a:hover {
-    background-color: $LightGrey;
+
+    &:hover {
+        background-color: $LightGrey;
+    }
 }
 
 p {
     margin-block: 0;
-}
 
-p:not(:last-child):not([class]) {
-    margin-bottom: 24px;
+    &:not(:last-child):not([class]) {
+        margin-bottom: 24px;
+    }
 }
 
 .container {
@@ -98,32 +92,35 @@ h6 {
     line-height: 2;
     white-space: wrap;
     text-decoration: none;
-    &:hover {
-        background-color: $LightGrey;
-    }
-}
 
-.button.transparent {
-    position: relative;
-    height: $InputHeight;
-    padding-left: 31px;
-    border: $Border;
-    padding-right: 80px;
-    background-color: transparent;
-    color: $Light;
-    &::after {
-        position: absolute;
-        right: 0;
-        content: "";
-        height: 100%;
-        aspect-ratio: 1;
-        background: ("icons/arrow-top-right.svg") center/70% no-repeat;
-        border-radius: 50%;
-        border: $Border;
-    }
     &:hover {
-        color: $Dark;
         background-color: $LightGrey;
+    }
+
+    &.transparent {
+        position: relative;
+        height: $InputHeight;
+        padding-left: 31px;
+        border: $Border;
+        padding-right: 80px;
+        background-color: transparent;
+        color: $Light;
+
+        &::after {
+            position: absolute;
+            right: 0;
+            content: "";
+            height: 100%;
+            aspect-ratio: 1;
+            background: ("icons/arrow-top-right.svg") center/70% no-repeat;
+            border-radius: 50%;
+            border: $Border;
+        }
+
+        &:hover {
+            color: $Dark;
+            background-color: $LightGrey;
+        }
     }
 }
 
@@ -147,6 +144,7 @@ input[type="number"] {
     border-radius: $BorderRadius;
     border: 1px solid $LightGrey;
     width: 100%;
+
     &:hover {
         border-color: $Light;
     }
@@ -163,74 +161,6 @@ select.input:invalid {
     color: $LightGrey;
 }
 
-.header {
-    background-color: $Dark-Alternate;
-    display: flex;
-    justify-content: space-between;
-    column-gap: 20px;
-    min-height: $HeaderHeight;
-    padding-inline: 32px;
-    align-items: center;
-}
-
-.header-logo {
-    flex-shrink: 0;
-}
-
-.header-menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 50px;
-}
-
-.header-menu-link {
-    display: inline-flex;
-    height: $HeaderHeight;
-    text-decoration: none;
-    text-transform: uppercase;
-    align-items: center;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 1.2px;
-    column-gap: 7px;
-    &.is-current::after {
-        border-radius: 50%;
-        content: "";
-        width: 5px;
-        height: 5px;
-        background-color: currentColor;
-    }
-}
-
-.header-actions {
-    display: flex;
-    column-gap: 40px;
-}
-
-.header-burger-button {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: transparent;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border: $Border;
-    color: $Light;
-    border-radius: $BorderRadius;
-    &:hover {
-        color: $Grey;
-        border-color: currentColor;
-    }
-}
-
-.header-button-line {
-    width: 6px;
-    height: 1px;
-    border-color: currentColor;
-    box-shadow: 16px 0px 0px currentColor;
-}
-
 .visible-hidden {
     position: absolute;
     margin: -1px;
@@ -242,6 +172,77 @@ select.input:invalid {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overlay: hidden;
+}
+
+.header {
+    background-color: $Dark-Alternate;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    min-height: $HeaderHeight;
+    padding-inline: 32px;
+    align-items: center;
+
+    .header-logo {
+        flex-shrink: 0;
+    }
+
+    .header-menu {
+        .header-menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 50px;
+            .header-menu-item {
+                .header-menu-link {
+                    display: inline-flex;
+                    height: $HeaderHeight;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    align-items: center;
+                    font-weight: 700;
+                    font-size: 12px;
+                    letter-spacing: 1.2px;
+                    column-gap: 7px;
+                    &.is-current::after {
+                        border-radius: 50%;
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        background-color: currentColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-actions {
+        display: flex;
+        column-gap: 40px;
+
+        .header-burger-button {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: transparent;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: $Border;
+            color: $Light;
+            border-radius: $BorderRadius;
+            &:hover {
+                color: $Grey;
+                border-color: currentColor;
+            }
+
+            .header-button-line {
+                width: 6px;
+                height: 1px;
+                border-color: currentColor;
+                box-shadow: 16px 0px 0px currentColor;
+            }
+        }
+    }
 }
 
 .banner {
@@ -587,6 +588,10 @@ select.input:invalid {
     gird-column: -1 / 1;
 }
 
+.calculate-input {
+    max-width: 100%;
+}
+
 .calculate-table-wrapper {
     position: relative;
     display: flex;
@@ -610,37 +615,38 @@ select.input:invalid {
 .calculate-table {
     position: relative;
     border-collapse: collapse;
-    tbody {
-        tr:last-child {
-            td:first-child {
-                position: relative;
-                &::after {
-                    content: "";
-                    background-color: $LightGrey;
-                }
-            }
-        }
-        td {
-            border-top: 1px $LightGrey;
+
+    tbody tr:last-child td:first-child {
+        position: relative;
+
+        &::after {
+            content: "";
+            background-color: $LightGrey;
         }
     }
-    :is(td, th) {
+
+    tbody tr td {
+        padding-bolck: 14px;
+        border-top: 1px solid $LightGrey;
+    }
+
+    tbody tr td,
+    thead tr th {
         padding-right: 30px;
-        :not(:first-child) {
+        &:not(:first-child) {
             padding-left: 30px;
         }
-        :not(:last-child) {
-            border-right: 1px $LightGrey;
+        &:not(:last-child) {
+            border-right: 1px solid $LightGrey;
         }
     }
-    th {
+
+    thead tr th {
         padding-block: 20px;
         text-align: left;
         text-transform: uppercase;
     }
-    td {
-        padding-bolck: 14px;
-    }
+
     tfood {
         color: $Light;
         td {
@@ -649,6 +655,7 @@ select.input:invalid {
         }
     }
 }
+
 @media (max-width: 1919px) {
     .motivation-card-image {
         margin-block: -20px;
