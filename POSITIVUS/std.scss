@@ -1,0 +1,69 @@
+@use "vars.scss";
+@use "header.scss";
+.container {
+    /* max-width: calc($ContainerWidth + $ContainerPaddingX * 2); */
+    margin-inline: auto;
+    /* padding-inline: $ContainerPaddingX; */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
+}
+
+.hidden-mobile {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+body {
+    /* font-family: $Font; */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.28;
+    /* color: $Dark; */
+    /* background-color: $White; */
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    /* transition-duration: $Transition; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 500;
+}
+/*
+h1 {
+    @include fluid-text(60, 43);
+}
+h2 {
+    @include fluid-text(40, 36);
+}
+h3 {
+    @include fluid-text(30, 26);
+}
+h4 {
+    @include fluid-text(20, 18);
+} */

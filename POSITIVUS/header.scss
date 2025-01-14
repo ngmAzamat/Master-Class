@@ -1,0 +1,42 @@
+.header {
+    padding-top: 60px;
+
+    .header-inner.container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 40px;
+    }
+    .header-logo.logo {
+        img {
+        }
+    }
+    .header-menu {
+        .header-menu-link {
+            .header-menu-item {
+                .header-menu-link {
+                }
+            }
+        }
+    }
+    .header-button.button.transparent {
+    }
+    button.button-burger-menu.visible-mobile.burger-button {
+        span.visually-hidden {
+        }
+    }
+}
+.mobile-overlay.visible-mobile {
+    form.mobile-overlay-close-button-wrapper {
+        button.mobile-overlay-close-button {
+        }
+        .mobile-overlay-body {
+            ul.mobile-overlay-link {
+                li.mobile-overlay-item {
+                    a.header-menu-link {
+                    }
+                }
+            }
+        }
+    }
+}

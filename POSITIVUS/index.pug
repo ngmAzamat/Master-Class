@@ -3,6 +3,41 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Kropp Fitness
+    title Positivus
     link(rel="stylesheet" href="style.scss")
   body
+    header.header
+        .header-inner.container
+            a.header-logo.logo
+                img(width="220" height="36")
+            nav.header-menu
+                ul.header-menu-link
+                    li.header-menu-item
+                        a.header-menu-link(href="/") About Us
+                    li.header-menu-item
+                        a.header-menu-link(href="/") Servises
+                    li.header-menu-item
+                        a.header-menu-link(href="/") Use Cases
+                    li.header-menu-item
+                        a.header-menu-link(href="/") Pricing
+                    li.header-menu-item
+                        a.header-menu-link(href="/") Blog
+            button.header-button.button.transparent Request a quote
+            button.button-burger-menu.visible-mobile.burger-button(onclick="mobileOverlay.showModal()")
+                span.visually-hidden Open Navigation menu
+    dialog.mobile-overlay.visible-mobile#mobileOverlay MENU
+        form.mobile-overlay-close-button-wrapper
+            button.mobile-overlay-close-button
+                span.visually-hidden close Navigation menu
+            .mobile-overlay-body
+                ul.mobile-overlay-link
+                    li.mobile-overlay-item
+                        a.header-menu-link(href="/") About Us
+                    li.mobile-overlay-item
+                        a.header-menu-link(href="/") Servises
+                    li.mobile-overlay-item
+                        a.header-menu-link(href="/") Use Cases
+                    li.mobile-overlay-item
+                        a.header-menu-link(href="/") Pricing
+                    li.mobile-overlay-item
+                        a.header-menu-link(href="/") Blog

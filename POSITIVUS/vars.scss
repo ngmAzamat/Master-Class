@@ -1,11 +1,9 @@
-// colors
 $Dark: #191a23;
 $White: #fffff;
 $Light: #f3f3f3;
 $Green: #b9ff66;
 $Grey: #898989;
 $FooterDark: #292a32;
-// Border
 $Border: 1px solid $Dark;
 $BorderRadius: 14px;
 $BorderRadiusSmall: 7px;
@@ -13,9 +11,32 @@ $BorderRadiusLarge: 45px;
 
 $Shadow: 0 5px 0 0 $Dark;
 $Font: "Space Grotesk", sans-serif;
-$CotainerWidth: 1240px;
+$ContainerWidth: 1240px;
 $CotainerPaddingX: 20px;
 $CotainerPaddingY: 70px;
 $InputHeight: 59px;
 $ButtonHeight: 68px;
 $Transition: 0.2s;
+
+@mixin fluid-text($Max: 48, $Min: 16) {
+    font-size: clamp(#{$Min}, #{$Max/1440 * 100}vw, #{$Max});
+}
+
+@mixin reset-link {
+    color: inherit;
+    &,
+    &:hover {
+        text-decration: none;
+    }
+}
+
+@mixin reset-button {
+    padding: 0;
+    background-color: transprent;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
