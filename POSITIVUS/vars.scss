@@ -35,8 +35,36 @@ $Transition: 0.2s;
     background-color: transprent;
 }
 
-@mixin flex-center {
-    display: flex;
+@mixin flex-center($IsInline: false) {
+    @if $IsInline {
+        display: inline-flex;
+    } @else {
+        display: flex;
+    }
     justify-content: center;
     align-items: center;
+}
+
+@mixin abs-center {
+    position: absoulte;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin square($size) {
+    width: $size;
+    aspect-ration: 1;
+}
+
+$DesktopAbone: 1281px;
+$Desktop: 1280px;
+$TabletAbone: 1024px;
+$Tablet: 1023px;
+$MobileAbone: 768px;
+$Mobile: 767px;
+
+@mixin desktop {
+    @media (max-width: ) {
+    }
 }

@@ -12,9 +12,28 @@
         }
     }
     .header-menu {
-        .header-menu-link {
+        font-size: 20px;
+        margin-left: auto;
+        .header-menu-list {
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
             .header-menu-item {
                 .header-menu-link {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    height: 48px;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 100%;
+                        width: 0;
+                        height: 2px;
+                        background-color: currentColor;
+                        transition-duration: inherit;
+                    }
                 }
             }
         }
@@ -39,4 +58,8 @@
             }
         }
     }
+}
+
+@media (max-width: 1220px) {
+    padding-top: 30px;
 }

@@ -1,0 +1,61 @@
+@use "vars.scss" as *;
+.container {
+    max-width: calc($ContainerWidth + $ContainerPaddingX * 2);
+    margin-inline: auto;
+    padding-inline: $ContainerPaddingX;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
+}
+.hidden-mobile {
+}
+.visible-mobile {
+}
+
+.body {
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: -0.03em;
+    color: $Grey50;
+    background-color: $Dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    colr: $White;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+}
+
+h1 {
+    line-height: 1.2;
+}
+h2 {
+    line-height: 1.3;
+}
+h3 {
+}
+h4 {
+}
+h5 {
+}
+h6 {
+}
