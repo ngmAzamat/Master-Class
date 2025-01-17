@@ -13,6 +13,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@parcel/transformer-pug": "^2.13.3",
     "parcel": "^2.13.3"
   }
 }
