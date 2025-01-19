@@ -1,65 +1,91 @@
+@use "vars.scss" as *;
+
 .header {
     padding-top: 60px;
+    @include desktop {
+        padding-top: 30px;
+    }
 
     .header-inner.container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         column-gap: 40px;
-    }
-    .header-logo.logo {
-        img {
+        @include tablet {
+            column-gap: 30px;
+        }
+        .header-logo.logo {
+            @include tablet {
+                max-width: 120px;
+            }
+            @include mobile {
+                max-width: 144px;
+            }
+            img {
+            }
+        }
+        .header-menu {
+            font-size: 20px;
+            margin-left: auto;
+            @include desktop {
+                font-size: 18px;
+            }
+            @include tablet {
+                font-size: 16px;
+            }
+            .header-menu-list {
+                display: flex;
+                align-items: center;
+                column-gap: 40px;
+                @include desktop {
+                    column-gap: 20px;
+                }
+                .header-menu-item {
+                    .header-menu-link {
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        height: 48px;
+                        @include hover {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 100%;
+                            left: 50%;
+                            translate: -50%;
+                            width: 0;
+                            height: 2px;
+                            background-color: currentColor;
+                            transition-duration: inherit;
+                        }
+                    }
+                }
+            }
+        }
+        .header-button.button.transparent {
+            height: 48px;
+            padding-inline: 18px;
+            font-size: 16px;
+        }
+        button.button-burger-menu {
         }
     }
-    .header-menu {
-        font-size: 20px;
-        margin-left: auto;
-        .header-menu-list {
-            display: flex;
-            align-items: center;
-            column-gap: 40px;
-            .header-menu-item {
-                .header-menu-link {
-                    position: relative;
-                    display: inline-flex;
-                    align-items: center;
-                    height: 48px;
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        top: 100%;
-                        left: 100%;
-                        width: 0;
-                        height: 2px;
-                        background-color: currentColor;
-                        transition-duration: inherit;
+    .mobile-overlay.visible-mobile {
+        form.mobile-overlay-close-button-wrapper {
+            button.mobile-overlay-close-button {
+            }
+            .mobile-overlay-body {
+                ul.mobile-overlay-list {
+                    li.mobile-overlay-item {
+                        a.header-menu-link {
+                        }
                     }
                 }
             }
         }
     }
-    .header-button.button.transparent {
-    }
-    button.button-burger-menu.visible-mobile.burger-button {
-        span.visually-hidden {
-        }
-    }
-}
-.mobile-overlay.visible-mobile {
-    form.mobile-overlay-close-button-wrapper {
-        button.mobile-overlay-close-button {
-        }
-        .mobile-overlay-body {
-            ul.mobile-overlay-link {
-                li.mobile-overlay-item {
-                    a.header-menu-link {
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 1220px) {
-    padding-top: 30px;
 }

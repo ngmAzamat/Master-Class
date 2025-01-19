@@ -1,0 +1,41 @@
+@use "vars.scss" as *;
+.header {
+    .header-promo {
+        padding-block: 20px;
+        text-align: center;
+        border-bottom: 1px solid $Dark;
+        .header-promo-inner {
+            .header-prom-link {
+                span {
+                }
+            }
+        }
+    }
+    .header-body {
+        padding-block: 24px;
+        background-color: $Dark10;
+        .header-body-inner {
+            column-gap: 1rem;
+            .header-logo.logo {
+                img {
+                }
+            }
+            .header-overlay {
+                .header-menu {
+                    .header-menu-list {
+                        .header-menu-item {
+                            .header-menu-link.is-active {
+                            }
+                        }
+                    }
+                }
+                .header-contact-us-link.button.button-yelow {
+                }
+            }
+            .header-burger-button {
+                .burger-button-line {
+                }
+            }
+        }
+    }
+}

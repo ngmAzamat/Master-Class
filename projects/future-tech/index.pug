@@ -13,19 +13,20 @@ html(lang="en")
                     span
         .header-body
             .header-body-inner.container
-                a.header-logo.logo(href="/" title="home" aria-label="home")
+                a.header-logo.logo(href="images/logo.svg" title="home" aria-label="home")
                     img(alt="" width="179" height="50")
-                nav.header-menu
-                    ul.header-menu-list
-                        li.header-menu-item
-                            a.header-menu-link.is-active(href="/") Home
-                        li.header-menu-item
-                            a.header-menu-link(href="/") News
-                        li.header-menu-item
-                            a.header-menu-link(href="/") Podcasts
-                        li.header-menu-item
-                            a.header-menu-link(href="/") Resourses
-                a.header-contact-us-link.button.button-yelow(href="/") Contact Us
+                .header-overlay
+                    nav.header-menu
+                        ul.header-menu-list
+                            li.header-menu-item
+                                a.header-menu-link.is-active(href="/") Home
+                            li.header-menu-item
+                                a.header-menu-link(href="/") News
+                            li.header-menu-item
+                                a.header-menu-link(href="/") Podcasts
+                            li.header-menu-item
+                                a.header-menu-link(href="/") Resourses
+                    a.header-contact-us-link.button.button-yelow(href="/") Contact Us
                 button.header-burger-button(aria-label="Open menu" title="Open menu")
                     span.burger-button-line
                     span.burger-button-line

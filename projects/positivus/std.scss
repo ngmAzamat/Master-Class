@@ -1,9 +1,14 @@
-@use "vars.scss";
-@use "header.scss";
+@use "vars.scss" as *;
+@use "sass:math";
+
+* {
+    margin: 0;
+    padding: 0;
+}
 .container {
-    max-width: calc($ContainerWidth + $ContainerPaddingX * 2);
     margin-inline: auto;
     padding-inline: $ContainerPaddingX;
+    max-width: calc(#{$ContainerWidth} + #{$ContainerPaddingX} * 2);
 }
 
 .visually-hidden {
@@ -19,20 +24,22 @@
 }
 
 .hidden-mobile {
-    display: none;
-
-    @media (min-width: 768px) {
-        display: block;
+    @include mobile {
+        display: none !important;
     }
 }
-
+.visible-mobile {
+    @include mobile-abone {
+        display: none;
+    }
+}
 body {
-    /* font-family: $Font; */
+    font-family: $Font;
     font-style: normal;
     font-weight: 400;
     line-height: 1.28;
-    /* color: $Dark; */
-    /* background-color: $White; */
+    color: $Dark;
+    background-color: $White;
 }
 
 a,
@@ -40,7 +47,7 @@ button,
 input,
 textarea,
 svg * {
-    /* transition-duration: $Transition; */
+    transition-duration: $Transition;
 }
 
 a {
@@ -54,7 +61,7 @@ h3,
 h4 {
     font-weight: 500;
 }
-/*
+
 h1 {
     @include fluid-text(60, 43);
 }
@@ -66,15 +73,51 @@ h3 {
 }
 h4 {
     @include fluid-text(20, 18);
-} */
+}
 
 .button {
-    @include flex-center;
-    border: $Border;
-    border-radius: $BorderRadius;
+    @include flex-center(true);
+    height: $ButtonHeight;
     padding-inline: 35px;
-    background-color: $Green;
+
     font-size: 20px;
     color: $White;
-    height: $Dark;
+    background-color: $Dark;
+
+    border: $Border;
+    border-radius: $BorderRadius;
+    @include hover {
+        color: $Dark;
+        background-color: $Green;
+    }
+}
+
+.transparent {
+    color: $Dark;
+    background-color: transparent;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+.burger-button {
+    @include reset-button;
+    @include square(48px);
+    position: relative;
+    @include hover {
+        background-color: $Green;
+    }
+    &::after {
+        @include abs-center;
+        content: "";
+        width: 50%;
+        height: 2px;
+        background-color: $Dark;
+        border-radius: 5px;
+        box-shadow:
+            0 -8px,
+            0 8px;
+    }
 }

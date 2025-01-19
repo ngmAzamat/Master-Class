@@ -9,8 +9,8 @@ html(lang="en")
     header.header
         .header-inner.container
             a.header-logo.logo
-                img(width="220" height="36")
-            nav.header-menu
+                img.logo-image(alt="" width="220" height="36" src="images/logo.svg")
+            nav.header-menu.hidden-mobile
                 ul.header-menu-list
                     li.header-menu-item
                         a.header-menu-link(href="/") About Us
@@ -22,7 +22,7 @@ html(lang="en")
                         a.header-menu-link(href="/") Pricing
                     li.header-menu-item
                         a.header-menu-link(href="/") Blog
-            button.header-button.button.transparent Request a quote
+            button.header-button.button.transparent.hidden-mobile Request a quote
             button.button-burger-menu.visible-mobile.burger-button(onclick="mobileOverlay.showModal()")
                 span.visually-hidden Open Navigation menu
     dialog.mobile-overlay.visible-mobile#mobileOverlay MENU
@@ -30,7 +30,7 @@ html(lang="en")
             button.mobile-overlay-close-button
                 span.visually-hidden close Navigation menu
             .mobile-overlay-body
-                ul.mobile-overlay-link
+                ul.mobile-overlay-list
                     li.mobile-overlay-item
                         a.header-menu-link(href="/") About Us
                     li.mobile-overlay-item
@@ -51,7 +51,7 @@ html(lang="en")
                             .hero-description
                                 p Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.
                             button.hero-button.button Book a consultation
-                        //img.hero-image(alt="" src="/" width="600" height="515")
+                        img.hero-image(alt="" src="images/hero-banner.svg" width="600" height="515")
                     .hero-partners
                         h2.visually-hidden Our Partners
                         ul.hero-partners-list

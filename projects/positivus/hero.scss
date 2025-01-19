@@ -1,0 +1,88 @@
+@use "vars.scss" as *;
+
+main.content {
+    section.section.container {
+        padding-block: $ContainerPaddingY;
+        .section-body {
+            .hero {
+                display: flex;
+                flex-direction: column;
+                row-gap: $ContainerPaddingY;
+
+                .hero-main {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    column-gap: 30px;
+                    @include mobile {
+                        flex-direction: column;
+                    }
+                    .hero-body {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 531px;
+                        row-gap: 35px;
+                        @include mobile {
+                            display: contents;
+                        }
+                        h1.hero-tiile {
+                            @include mobile {
+                                order: -2;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .hero-description {
+                            font-size: 20px;
+                            line-height: 1.4;
+                            p {
+                            }
+                            @include mobile {
+                                margin-bottom: 40px;
+                            }
+                        }
+                        button.hero-button.button {
+                            @include mobile {
+                                width: 100%;
+                                max-width: 390px;
+                                margin-inline: auto;
+                            }
+                        }
+                    }
+                    .hero-image {
+                        @include tablet {
+                            max-width: 40%;
+                            height: auto;
+                        }
+                        @include mobile {
+                            order: -1;
+                            width: 100%;
+                            max-width: 100%;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+                .hero-partners {
+                    ul.hero-partners-list {
+                        display: flex;
+                        justify-content: space-between;
+                        column-gap: 37px;
+                        @include tablet {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            row-gap: 20px;
+                        }
+                        li.hero-partners-item {
+                            @include tablet {
+                                display: flex;
+                                justify-content: center;
+                            }
+                            img.hero-partners-image {
+                                filter: grayscale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
