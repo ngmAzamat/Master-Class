@@ -1,0 +1,19 @@
+header.header
+    .header-inner.container
+        a.header-logo.logo
+            img.logo-image(alt="" width="220" height="36" src="images/logo.svg")
+        nav.header-menu.hidden-mobile
+            ul.header-menu-list
+                li.header-menu-item
+                    a.header-menu-link(href="/") About Us
+                li.header-menu-item
+                    a.header-menu-link(href="/") Servises
+                li.header-menu-item
+                    a.header-menu-link(href="/") Use Cases
+                li.header-menu-item
+                    a.header-menu-link(href="/") Pricing
+                li.header-menu-item
+                    a.header-menu-link(href="/") Blog
+        button.header-button.button.transparent.hidden-mobile Request a quote
+        button.button-burger-menu.visible-mobile.burger-button(onclick="mobileOverlay.showModal()")
+            span.visually-hidden Open Navigation menu

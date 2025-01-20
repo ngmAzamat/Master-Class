@@ -6,64 +6,7 @@ html(lang="en")
     title Positivus
     link(rel="stylesheet" href="style.scss")
   body
-    header.header
-        .header-inner.container
-            a.header-logo.logo
-                img.logo-image(alt="" width="220" height="36" src="images/logo.svg")
-            nav.header-menu.hidden-mobile
-                ul.header-menu-list
-                    li.header-menu-item
-                        a.header-menu-link(href="/") About Us
-                    li.header-menu-item
-                        a.header-menu-link(href="/") Servises
-                    li.header-menu-item
-                        a.header-menu-link(href="/") Use Cases
-                    li.header-menu-item
-                        a.header-menu-link(href="/") Pricing
-                    li.header-menu-item
-                        a.header-menu-link(href="/") Blog
-            button.header-button.button.transparent.hidden-mobile Request a quote
-            button.button-burger-menu.visible-mobile.burger-button(onclick="mobileOverlay.showModal()")
-                span.visually-hidden Open Navigation menu
-    dialog.mobile-overlay.visible-mobile#mobileOverlay MENU
-        form.mobile-overlay-close-button-wrapper
-            button.mobile-overlay-close-button
-                span.visually-hidden close Navigation menu
-            .mobile-overlay-body
-                ul.mobile-overlay-list
-                    li.mobile-overlay-item
-                        a.header-menu-link(href="/") About Us
-                    li.mobile-overlay-item
-                        a.header-menu-link(href="/") Servises
-                    li.mobile-overlay-item
-                        a.header-menu-link(href="/") Use Cases
-                    li.mobile-overlay-item
-                        a.header-menu-link(href="/") Pricing
-                    li.mobile-overlay-item
-                        a.header-menu-link(href="/") Blog
+    include header.pug
     main.content
-        section.section.container
-            .section-body
-                .hero
-                    .hero-main
-                        .hero-body
-                            h1.hero-tiile Navigating the digital landscape for success
-                            .hero-description
-                                p Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.
-                            button.hero-button.button Book a consultation
-                        img.hero-image(alt="" src="images/hero-banner.svg" width="600" height="515")
-                    .hero-partners
-                        h2.visually-hidden Our Partners
-                        ul.hero-partners-list
-                            li.hero-partners-item
-                                img.hero-partners-image(alt="" src="images/amazon.svg" width="130" height="48")
-                            li.hero-partners-item
-                                img.hero-partners-image(alt="" src="images/dribble.svg" width="130" height="48")
-                            li.hero-partners-item
-                                img.hero-partners-image(alt="" src="images/hubspot.svg" width="130" height="48")
-                            li.hero-partners-item
-                                img.hero-partners-image(alt="" src="images/netflix.svg" width="130" height="48")
-                            li.hero-partners-item
-                                img.hero-partners-image(alt="" src="images/notion.svg" width="130" height="48")
-                            li.hero-partners-item
-                                img.hero-partners-image(alt="" src="images/zoom.svg" width="130" height="48")
+        include hero.pug
+        include services.pug
