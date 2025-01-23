@@ -1,0 +1,86 @@
+@use "vars.scss" as *;
+
+section.section.container {
+    header.section-header {
+        h2.section-title.puddle-big {
+        }
+        .section-description {
+            p {
+            }
+        }
+    }
+    .section-body {
+        .process {
+            ol.process-list {
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                counter-reset: custom-counter;
+                list-style: none;
+
+                li.process-item {
+                    counter-increment: custom-counter;
+                    details.process-acordion {
+                        padding: 40px 60px;
+                        background-color: $LightGrey;
+                        border: $Border;
+                        border-radius: $BorderRadiusLarge;
+                        box-shadow: $Shadow;
+                        @include hover {
+                            background-color: $Green;
+                        }
+                        &[open] {
+                            background-color: $Green;
+                            summary.process-arordion-header {
+                                .process-arordion-indicator::after {
+                                    rotate: 0deg;
+                                }
+                            }
+                        }
+                        summary.process-arordion-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            column-gap: 50px;
+                            cursor: pointer;
+                            user-select: none;
+                            h3.process-arordion-title {
+                                display: flex;
+                                align-items: center;
+                                column-gap: 25px;
+                                &::before {
+                                    content: "0" couner(custom-counter);
+                                    font-size: 2em;
+                                }
+                            }
+                            span.process-arordion-indicator {
+                                @include flex-center;
+                                @include square(58px);
+                                position: relative;
+                                background-color: $LightGrey;
+                                border: $Border;
+                                border-radius: 50%;
+                                &::before,
+                                &::after {
+                                    @include abs-center;
+
+                                    content: "";
+                                    width: 45%;
+                                    height: 10%;
+                                    background-color: $Dark;
+                                }
+                                &::after {
+                                    rotate: 90deg;
+                                }
+                            }
+                        }
+                        .process-arordion-body {
+                            p {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

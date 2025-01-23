@@ -1,5 +1,5 @@
 @use "vars.scss" as *;
-@use "sass:math";
+@use "sass:math" as *;
 
 * {
     margin: 0;
@@ -97,8 +97,7 @@ h4 {
     background-color: transparent;
 }
 
-ul,
-li {
+ul {
     list-style-type: none;
 }
 
@@ -120,4 +119,22 @@ li {
             0 -8px,
             0 8px;
     }
+}
+
+.grid {
+    $GridColumn: 1;
+    display: grid;
+    grid-template-columns: repeat($GridColumn, 1fr);
+    gap: 40px;
+    @for $I from 2 through 12 {
+        .grid-#{$I} {
+            $GridColumn: #{$I};
+        }
+    }
+}
+
+.puddle-bg {
+    padding-inline: 7px;
+    background-color: $Green;
+    border-radius: $BorderRadiusSmall;
 }

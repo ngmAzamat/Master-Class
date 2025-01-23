@@ -1,6 +1,6 @@
 $Dark: #191a23;
 $White: #ffffff;
-$Light: #f3f3f3;
+$LightGrey: #f3f3f3;
 $Green: #b9ff66;
 $Grey: #898989;
 $FooterDark: #292a32;
@@ -46,17 +46,15 @@ $Transition: 0.2s;
 }
 
 @mixin abs-center {
-    position: absoulte;
+    position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
-
-@mixin square($size) {
-    width: $size;
-    aspect-ration: 1;
+@mixin square($Size) {
+    width: $Size;
+    aspect-ratio: 1;
 }
-
 $DesktopAbone: 1281px;
 $Desktop: 1280px;
 $TabletAbone: 1024px;

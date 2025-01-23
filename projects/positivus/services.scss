@@ -1,0 +1,107 @@
+@use "vars.scss" as *;
+
+section.section.container {
+    header.section.header {
+        h2.puddle-big {
+        }
+        .section-description {
+            p {
+            }
+        }
+    }
+    .section-body {
+        .services {
+            ul.services-list {
+                :not(:last-child) {
+                    padding-bottom: 100px;
+                }
+                li.services-item {
+                    article.service-card {
+                        display: flex;
+                        justify-content: space-between;
+                        column-gap: 30px;
+                        min-height: 310px;
+                        padding: 50px;
+                        background-color: $LightGrey;
+                        bordr: $Border;
+                        border-radius: $BorderRadiusLarge;
+                        box-shadow: $Shadow;
+                        .service-card-body {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            row-gap: 30px;
+                            h3.service-card-title {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                span.puddle-big {
+                                }
+                            }
+                            a.service-card-link {
+                                display: inline-flex;
+                                align-items: center;
+                                column-gap: 15px;
+                                font-size: 20px;
+                                @include hover {
+                                    opacity: 0.7;
+                                }
+                                span.service-card-link-icon-wrapper {
+                                    @include flex-center;
+                                    @include square(41px);
+                                    background-color: currentColor;
+                                    border-radius: 50%;
+                                    svg {
+                                        color: $Green;
+                                    }
+                                }
+                                span.service-card-link-label {
+                                }
+                            }
+                        }
+
+                        img.service-card-image {
+                            align-self: center;
+                        }
+                    }
+                    article.service-card.green-bg {
+                        background-color: $Green;
+                    }
+                    article.service-card.dark-bg {
+                        background-color: $Dark;
+                    }
+                }
+            }
+        }
+    }
+    .services-banner.banner {
+        $BannerImageOffsetY: 24px;
+        padding-block: $BannerImageOffsetY;
+        .banner-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $LightGrey;
+            .banner-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 26px;
+                padding: 60px;
+                border-radius: $BorderRadiusLarge;
+                h3.banner-title {
+                }
+                .banner-description {
+                    max-width: 500px;
+                    p {
+                    }
+                }
+                .banner-button {
+                }
+            }
+            img.banner-image {
+                margin-block: calc(#{$BannerImageOffsetY} * -1);
+            }
+        }
+    }
+}
