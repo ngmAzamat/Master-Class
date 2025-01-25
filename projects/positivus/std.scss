@@ -126,9 +126,26 @@ ul {
     display: grid;
     grid-template-columns: repeat($GridColumn, 1fr);
     gap: 40px;
+    @include mobile {
+        gap: 30px;
+    }
     @for $I from 2 through 12 {
         .grid-#{$I} {
             $GridColumn: #{$I};
+        }
+    }
+    .grid-2 {
+        @include tablet {
+            $GridColumn: 1;
+        }
+    }
+
+    .grid-3 {
+        @include desktop {
+            $GridColumn: 2;
+        }
+        @include mobile {
+            $GridColumn: 1;
         }
     }
 }

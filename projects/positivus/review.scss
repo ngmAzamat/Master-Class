@@ -1,0 +1,44 @@
+section.section.container {}
+    header.section-header {}
+        h2.section-title.puddle-big {}
+        .section-description {
+            p {}
+        }
+    .section-body {}
+        .reviews {}
+            .reviews-slider {}
+                ul.reviews-slider-list {}
+                    li.reviews-slider-item {}
+                        blockquote.review-card {}
+                            .review-card-body {
+                                p {}
+                            }
+                            footer.review-card-footer {}
+                                cite.review-card-name {}
+                                cite.review-card-company {}
+            .reviews-actions {}
+                button.reviews-arrow-button {}
+                    span.visually-hidden {}
+                    include icons/arrow-left.svg
+                .reviews-pagination.pagination {}
+                    ul.pagination-list {}
+                        li.pagination-item {}
+                            button.pagination-button.is-current {}
+                                span.visually-hidden {}
+                                include icons/star.svg
+                        li.pagination-item
+                            button.pagination-button
+                                span.visually-hidden Second Slide
+                                include icons/star.svg
+                        li.pagination-item
+                            button.pagination-button
+                                span.visually-hidden Third Slide
+                                include icons/star.svg
+                        li.pagination-item
+                            button.pagination-button
+                                span.visually-hidden Fifth Slide
+                                include icons/star.svg
+
+                button.reviews-arrow-button
+                    span.visually-hidden Next Slide
+                    include icons/arrow-right.svg
