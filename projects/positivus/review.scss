@@ -1,5 +1,6 @@
 @use "vars.scss" as *;
-
+$ReviewCardCornerWidth: 40px;
+$ReviewCardCornerOffsetLeft: 50px;
 section.section.container {
     header.section-header {
         h2.section-title.puddle-big {
@@ -29,16 +30,42 @@ section.section.container {
                             flex-direction: column;
                             row-gap: 48px;
                             .review-card-body {
+                                position: relative;
+                                padding: 48px 52px;
                                 border: 1px solid $Green;
                                 border-radius: $BorderRadiusLarge;
-
+                                ::after {
+                                    @include square($ReviewCardCornerWidth0px);
+                                    content: "";
+                                    position: absolute;
+                                    top: 100%;
+                                    left: $ReviewCardCornerOffsetLeft;
+                                    background-color: $Dark;
+                                    border: inherit;
+                                    rotate: 45deg;
+                                    clip-path: polygon(
+                                        100% 0,
+                                        0% 100%,
+                                        100% 100%
+                                    );
+                                    translate: 0 -50%;
+                                }
                                 p {
                                 }
                             }
                             footer.review-card-footer {
-                                cite.review-card-name {
+                                display: flex;
+                                flex-direction: column;
+                                padding-left: calc(
+                                        $ReviewCardCornerOffsetLeft +
+                                            $ReviewCardCornerWidth / 2
+                                    )
+                                    cite.review-card-name {
+                                    color: $Green;
                                 }
+                                cite.review-card-name,
                                 cite.review-card-company {
+                                    font-style: normal;
                                 }
                             }
                         }
