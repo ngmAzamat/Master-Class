@@ -24,6 +24,7 @@ section.section.container {
             overflow-x: hidden;
             @include tablet {
                 padding-inline: 30px;
+                padding: 30px 30px 46px;
                 row-gap: 46px;
             }
             .reviews-slider {
@@ -38,6 +39,9 @@ section.section.container {
                     @include tablet-abone {
                         margin-left: calc($RewiewsSliderSlideWidth / 2 * -1);
                     }
+                    @include tablet {
+                        column-gap: 30px;
+                    }
                     li.reviews-slider-item {
                         min-width: $RewiewsSliderSlideWidth;
                         scroll-snap-align: start;
@@ -45,6 +49,11 @@ section.section.container {
                             display: flex;
                             flex-direction: column;
                             row-gap: 48px;
+                            @include mobile {
+                                $ReviewCardCornerWidth: 32px;
+                                $ReviewCardCornerOffsetLeft: 46px;
+                                row-gap: 44px;
+                            }
                             .review-card-body {
                                 position: relative;
                                 padding: 48px $ReviewCardCornerOffsetLeft 52px;

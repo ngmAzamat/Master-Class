@@ -12,18 +12,19 @@ section.section.container {
     .section-body {
         .services {
             ul.services-list {
-                :not(:last-child) {
+                /* :not(:last-child) {
                     padding-bottom: 100px;
-                }
+                } */
                 li.services-item {
                     article.service-card {
                         display: flex;
                         justify-content: space-between;
                         column-gap: 30px;
-                        min-height: 310px;
+                        height: 310px;
+                        width: 600px;
+                        border: $Border;
                         padding: 50px;
                         background-color: $LightGrey;
-                        bordr: $Border;
                         border-radius: $BorderRadiusLarge;
                         box-shadow: $Shadow;
                         .service-card-body {
@@ -49,13 +50,16 @@ section.section.container {
                                 span.service-card-link-icon-wrapper {
                                     @include flex-center;
                                     @include square(41px);
+
                                     background-color: currentColor;
                                     border-radius: 50%;
+                                    padding: 0;
                                     svg {
                                         color: $Green;
                                     }
                                 }
                                 span.service-card-link-label {
+                                    font-size: 20px;
                                 }
                             }
                         }
@@ -80,6 +84,8 @@ section.section.container {
         .banner-inner {
             display: flex;
             justify-content: space-between;
+            padding-inline: 60px;
+            border-radius: $BorderRadiusLarge;
             align-items: center;
             background-color: $LightGrey;
             .banner-body {
@@ -87,8 +93,6 @@ section.section.container {
                 flex-direction: column;
                 align-items: center;
                 row-gap: 26px;
-                padding: 60px;
-                border-radius: $BorderRadiusLarge;
                 h3.banner-title {
                 }
                 .banner-description {

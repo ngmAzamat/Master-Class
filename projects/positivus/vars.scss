@@ -18,8 +18,8 @@ $InputHeight: 59px;
 $ButtonHeight: 68px;
 $Transition: 0.2s;
 
-@mixin fluid-text($Max: 48, $Min: 16) {
-    font-size: clamp(#{$Min}, #{$Max/1440 * 100}vw, #{$Max});
+@mixin fluid-text($max: 48, $min: 16) {
+    font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
 }
 
 @mixin reset-link {
